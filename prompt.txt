@@ -1,0 +1,10 @@
+J'ai un projet qui consiste a creer des serveurs d'application. C'est a propos d'une gestion de banque. Le projet est compose de 3 serveurs d'application dont chacun a son role:
+1) le premier est un serveur d'application qui gere la situation d'un compte courant
+2) le deuxieme est un serveur ou on gere les comptes de depots, ou il y a des contraintes comme les frequences de retrait ainsi que les interets annuel
+3) le troisieme, c'est un serveur ou on gere les pret effectues par les clients
+
+Le 4eme est un centralisateur qui prend toutes ces fonctions pour en faire une grande fonction qui calcule le solde en general d'un client dans la banque.
+
+Fais juste ce que je demande. J'aimerais tester juste pour le moment le 1er serveur et avec lui le centralisateur. J'utilise EJB et le centralisateur se connecte avec ce premier serveur via EJB. J'utilise visual studio code pour le moment. 
+
+Ma premiere question. Est ce que je peux utiliser spring mvc en utilisant maven pour creer le premier serveur et montre moi etape par etape comment je peux faire pour faire marcher ce test d'abord et conseille moi aussi quel environement de developpement je dois utiliser
