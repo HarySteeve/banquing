@@ -3,7 +3,6 @@ package com.example.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.example.dto.CompteDTO;
 
 public class CreditDTO implements Serializable {
     private Integer id;

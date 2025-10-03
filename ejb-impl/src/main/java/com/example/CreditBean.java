@@ -3,7 +3,6 @@ package com.example;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.CreditRemote;
 import com.example.dto.CreditDTO;
 import com.example.entity.Credit;
 
@@ -19,7 +18,7 @@ public class CreditBean implements CreditRemote {
     @Override
     public List<CreditDTO> getAllcreditsByIdCompte(Integer idCompte) {
         List<Credit> credits = em.createQuery(
-            "SELECT c FROM credit c WHERE c.compte.id = :idCompte", Credit.class)
+            "SELECT c FROM Credit c WHERE c.compte.id = :idCompte", Credit.class)
             .setParameter("idCompte", idCompte)
             .getResultList();
 

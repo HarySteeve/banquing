@@ -13,8 +13,8 @@
     <modules>
       <module>ejb-api</module>      <!-- ok -->
       <module>ejb-impl</module>     <!-- ok -->
-      <!-- <module>ejb-client</module> -->
-       <module>ejb-ear</module>
+      <module>ejb-client</module>   <!-- ok -->
+       <module>ejb-ear</module>     <!-- ok -->
     </modules>
 
 
