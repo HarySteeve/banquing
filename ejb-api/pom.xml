@@ -11,17 +11,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ejb-impl</artifactId>
-    <packaging>ejb</packaging>
+    <artifactId>ejb-api</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Le contrat partagé -->
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>ejb-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- API EJB (interfaces distantes) -->
         <dependency>
             <groupId>jakarta.ejb</groupId>
@@ -30,18 +23,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- API JPA -->
+        <!-- API JPA (pour annoter User @Entity) -->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
             <version>3.1.0</version>
-        </dependency>
-
-        <!-- Driver PostgreSQL (utilisé par WildFly au runtime) -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.6.0</version>
         </dependency>
     </dependencies>
 </project>
