@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "client")
 public class Client {
+    // -- Constructors --
     public Client(Integer id, String nom, String prenom, Date dateNaissance, List<Compte> comptes) {
         this.id = id;
         this.nom = nom;
@@ -16,6 +17,7 @@ public class Client {
         this.comptes = comptes;
     }
     public Client() {}
+    // --- && ---
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,40 +32,20 @@ public class Client {
     private List<Compte> comptes;
 
     // --- Getters et Setters ---
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public String getNom() {
-        return nom;
-    }
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+    public String getNom() { return nom; }
+    public void setNom(String nom) { this.nom = nom; }
 
-    public String getPrenom() {
-        return prenom;
-    }
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+    public String getPrenom() { return prenom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
 
-    public Date getDateNaissance() {
-        return dateNaissance;
-    }
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
+    public Date getDateNaissance() { return dateNaissance; }
+    public void setDateNaissance(Date dateNaissance) { this.dateNaissance = dateNaissance; }
 
-    public List<Compte> getComptes() {
-        return comptes;
-    }
-    public void setComptes(List<Compte> comptes) {
-        this.comptes = comptes;
-    }
+    public List<Compte> getComptes() { return comptes; }
+    public void setComptes(List<Compte> comptes) { this.comptes = comptes; }
 
     @Override
     public String toString() {

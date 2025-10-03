@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "compte")
 public class Compte {
+    // --- Constructors ---
     public Compte(Integer id, Float soldeInitial, Client client, List<Debit> debits, List<Credit> credits) {
         this.id = id;
         this.soldeInitial = soldeInitial;
@@ -15,6 +16,7 @@ public class Compte {
         this.credits = credits;
     }
     public Compte() {}
+    // --- && ---
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,40 +34,20 @@ public class Compte {
     private List<Credit> credits;
 
     // --- Getters et setters ---
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id;}
 
-    public Float getSoldeInitial() {
-        return soldeInitial;
-    }
-    public void setSoldeInitial(Float soldeInitial) {
-        this.soldeInitial = soldeInitial;
-    }
+    public Float getSoldeInitial() { return soldeInitial; }
+    public void setSoldeInitial(Float soldeInitial) { this.soldeInitial = soldeInitial; }
 
-    public Client getClient() {
-        return client;
-    }
-    public void setClient(Client client) {
-        this.client = client;
-    }
+    public Client getClient() { return client; }
+    public void setClient(Client client) { this.client = client; }
 
-    public List<Debit> getDebits() {
-        return debits;
-    }
-    public void setDebits(List<Debit> debits) {
-        this.debits = debits;
-    }
+    public List<Debit> getDebits() { return debits; }
+    public void setDebits(List<Debit> debits) { this.debits = debits; }
 
-    public List<Credit> getCredits() {
-        return credits;
-    }
-    public void setCredits(List<Credit> credits) {
-        this.credits = credits;
-    }
+    public List<Credit> getCredits() { return credits; }
+    public void setCredits(List<Credit> credits) { this.credits = credits; }
 
     @Override
     public String toString() {

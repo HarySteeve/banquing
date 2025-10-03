@@ -1,0 +1,7 @@
+com\example\CreditRemote.class
+com\example\dto\DebitDTO.class
+com\example\dto\ClientDTO.class
+com\example\dto\CreditDTO.class
+com\example\DebitRemote.class
+com\example\dto\CompteDTO.class
+com\example\CompteCourantRemote.class

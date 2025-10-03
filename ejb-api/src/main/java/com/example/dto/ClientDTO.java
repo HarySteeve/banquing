@@ -11,6 +11,7 @@ public class ClientDTO implements Serializable {
     private Date dateNaissance;
     private List<CompteDTO> comptes;
 
+    // --- Constructors ---
     public ClientDTO(Integer id, String nom, String prenom, Date dateNaissance, List<CompteDTO> comptes) {
         this.id = id;
         this.nom = nom;
@@ -20,44 +21,21 @@ public class ClientDTO implements Serializable {
     }
 
     public ClientDTO() {}
+    // --- && ---
 
-    public Integer getId() {
-        return id;
-    }
+    // --- Getters and Setters ---
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public String getNom() { return nom; }
+    public void setNom(String nom) { this.nom = nom; }
 
-    public String getNom() {
-        return nom;
-    }
+    public String getPrenom() { return prenom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+    public Date getDateNaissance() { return dateNaissance; }
+    public void setDateNaissance(Date dateNaissance) { this.dateNaissance = dateNaissance; }
 
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public Date getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
-    public List<CompteDTO> getComptes() {
-        return comptes;
-    }
-
-    public void setComptes(List<CompteDTO> comptes) {
-        this.comptes = comptes;
-    }
+    public List<CompteDTO> getComptes() { return comptes; }
+    public void setComptes(List<CompteDTO> comptes) { this.comptes = comptes; }
 }
