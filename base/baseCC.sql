@@ -1,3 +1,8 @@
+\c postgres;
+DROP DATABASE IF EXISTS compte_courant;
+CREATE DATABASE compte_courant;
+\c compte_courant;
+
 CREATE TABLE client(
    id INTEGER,
    nom VARCHAR(50),
