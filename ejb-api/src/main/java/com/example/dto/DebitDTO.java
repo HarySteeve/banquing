@@ -20,6 +20,13 @@ public class DebitDTO implements Serializable {
         this.compte = compte;
     }
 
+    public DebitDTO(Integer id, String description, Float montant, Date dateModif) {
+        this.id = id;
+        this.description = description;
+        this.montant = montant;
+        this.dateModif = dateModif;
+    }
+
     public DebitDTO() {}
     // --- && ---
 

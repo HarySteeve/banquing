@@ -6,7 +6,8 @@ import javax.naming.NamingException;
 import java.util.List;
 import java.util.Properties;
 
-import com.example.dto.CreditDTO; 
+import com.example.dto.CreditDTO;
+import com.example.dto.DebitDTO; 
 
 public class ClientApp {
     public static void main(String[] args) throws NamingException {
@@ -18,14 +19,24 @@ public class ClientApp {
         Context context = new InitialContext(props);
 
         // JNDI du UserBean 
-        String jndiName = "ejb-ear-banquing-1.0-SNAPSHOT/com.example-ejb-impl-1.0-SNAPSHOT/CreditBean!com.example.CreditRemote";
+        String jndiNameCompteCourant = "ejb-ear-banquing-1.0-SNAPSHOT/com.example-ejb-impl-1.0-SNAPSHOT/CompteCourantBean!com.example.CompteCourantRemote";
+        String jndiNameCredit = "ejb-ear-banquing-1.0-SNAPSHOT/com.example-ejb-impl-1.0-SNAPSHOT/CreditBean!com.example.CreditRemote";
+        String jndiNameDebit = "ejb-ear-banquing-1.0-SNAPSHOT/com.example-ejb-impl-1.0-SNAPSHOT/DebitBean!com.example.DebitRemote";
 
-        CreditRemote creditBean = (CreditRemote) context.lookup(jndiName);
+        CreditRemote creditBean = (CreditRemote) context.lookup(jndiNameCredit);
+        DebitRemote debitBean = (DebitRemote) context.lookup(jndiNameDebit);
+        CompteCourantRemote compteCourantBean = (CompteCourantRemote) context.lookup(jndiNameCompteCourant);
 
-        // Récupérer tous les credits du compte id: 1
+        // Récupérer tous les credits du compte id: 100
         List<CreditDTO> credits = creditBean.getAllcreditsByIdCompte(100);
-        for(CreditDTO c : credits){
-            System.out.println("Montant: " + c.getMontant() +", desc: "+ c.getDescription());
-        }
+
+        // --- Recuperer tous les debits du compte id: 100
+        List<DebitDTO> debits = debitBean.getAllDebitsbyIdCompte(100);
+
+        // --- Solde
+        Float solde = compteCourantBean.calculSolde(debits, credits);
+        System.out.println("============");
+        System.out.println("SOLDE: " + solde);
+
     }
 }

@@ -1,5 +1,7 @@
+com\example\DebitBean.class
 com\example\CreditBean.class
 com\example\entity\Compte.class
 com\example\entity\Client.class
+com\example\CompteCourantBean.class
 com\example\entity\Debit.class
 com\example\entity\Credit.class
